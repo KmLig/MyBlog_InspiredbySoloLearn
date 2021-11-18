@@ -1,0 +1,55 @@
+﻿document.addEventListener('fngprntDefined', function (event) {
+    
+    function hasTokens() {
+        return !!JSON.parse(localStorage.getItem('accessToken'))?.data
+            && !!JSON.parse(localStorage.getItem('refreshToken'))?.data
+            && !!JSON.parse(localStorage.getItem('expiresIn'))?.data
+    }
+
+    function setTokens(tokenData) {
+        Object.keys(tokenData).forEach(function (key) {
+            localStorage.setItem(key, JSON.stringify({ data: tokenData[key] }));
+        });
+    }
+
+    function processTokenData(response) {
+        var date = new Date();
+        date.setSeconds(date.getSeconds() + response.expiresIn);
+        return {
+            accessToken: response.accessToken,
+            refreshToken: response.refreshToken,
+            expiresIn: date.toISOString()
+        }
+    }
+
+    function sendXHR(method, url, body, responseHandler) {
+        var xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                responseHandler(JSON.parse(xhr.response));
+            }
+        }
+        if (body) {
+            xhr.send(JSON.stringify(body))
+        } else {
+            xhr.send();
+        }
+    }
+
+    if (document.cookie.indexOf('LoginState=1') > -1 && (!localStorage.getItem('user') || !localStorage.getItem('accessToken'))) {
+        localStorage.removeItem('user');
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+        localStorage.removeItem('isDark');
+        localStorage.removeItem('expiresIn');
+        localStorage.removeItem('msAccessToken');
+        localStorage.removeItem('serviceAccessToken');
+        window.location.href = "/User/Logout";
+    } if (!hasTokens()) {
+        sendXHR("GET", window.slConfig.envURLs.authApiHost + "/user/publicToken?subject=" + event.detail, null, function (response) {
+            setTokens(processTokenData(response));
+        });
+    }
+});
