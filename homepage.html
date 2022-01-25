@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Blog của Kiếm Thánh</title>
-        <link href="styles3.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kiếm Thánh - Đấu Đế</title>
+        <link href="styles.css" rel="stylesheet">
 		
     </head>
     
     <body>
 	
 		<div class="audio">
-		<audio controls draggable="true">
-		<source src="mackeanh.mp3" type="audio/mpeg">
-		</audio>
+            <audio controls autoplay>                
+                <source src="./audio/mackeanh.mp3" type="audio/mpeg">              
+            </audio>
 		</div>
 		
-        <!-- header start -->
+        
         <div id="header" class="section">
-            <img alt="" class="img-circle" src="anh1.jpg">
+            <img alt="" class="img-circle" src="Khiem_propic.jpg">
             <p>Kiếm Thánh ϞϞ(๑⚈ ․̫ ⚈๑)∩</p>
         </div>
-        <!-- header end -->
         
-        <!-- About Me section start -->
+        
+        
         <div class="section">
-            <h1><span> Về bản thân</span></h1>
+            <h1><span> Life is short! So keep smiling 😊 </span></h1>
             <p>
-                Hey! I'm <strong>Kiếm</strong>. Coding is interesting.
+                Hey! I'm <strong>Kiếm Thánh</strong>. Coffee is for my love and coding is for my life.
             </p>
-            <p class="quote">"Past is experience, Present is experiment and Future is expectation."</p>
+            <p class="quote">If she's amazing, she won't be easy.....If she's easy, she won't be amazing...... If she's worth it, you won't give up. If you give up, you're not worthy....Truth is, everybody is going to hurt you, you just gotta find the ones worth suffering for......😘
+            </p>
         </div>
-        <!-- About Me section end -->
         
-        <!-- My Schedule section start -->
+        
+        
         <div class="section">
             <h1><span>My Schedule</span></h1>
             <table>
@@ -108,14 +112,66 @@
             </ul>
         </div>
         <!-- My Skills section end -->
-        
+        <div class="section">
+            <h1><span>My Gallery</span></h1>
+            <div class="wrapper">
+                <div class="image">
+                    <img src="./gallery/img1.jpg" alt="">
+                </div>
+                <!-- item img -->
+                <div class="image">
+                    <img src="./gallery/img2.jpg" alt="">
+                </div>
+                <!-- item img -->
+                <div class="image">
+                    <img src="./gallery/img3.jpg" alt="">
+                </div>
+                <!-- item img -->
+                <div class="image">
+                    <img src="./gallery/img4.jpg" alt="">
+                </div>
+                <!-- item img -->
+                <div class="image">
+                    <img src="./gallery/img5.jpg" alt="">
+                </div>
+                <!-- item img -->
+                <div class="image">
+                    <img src="./gallery/img6.jpg" alt="">
+                </div>
+                <!-- item img -->
+                <div class="image">
+                    <img src="./gallery/img7.jpg" alt="">
+                </div>
+                <!-- item img -->
+                <div class="image">
+                    <img src="./gallery/img8.jpg" alt="">
+                </div>
+                <!-- item img -->
+            </div>
+            <div class="gallery">
+                <div class="close">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="gallery__inner">
+                    <img src="./gallery/img1.jpg" alt="">
+                </div>
+                <div class="control prev">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="control next">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
         
          <!-- Media section start -->
         <div class="section">
-            <h1><span>My Media</span></h1>
-            <iframe height="300" width="600" src="https://www.youtube.com/embed/bheanxauu2Y" allowfullscreen frameborder="0"></iframe>
-			<h1><span>My Media 2</span></h1>
-            <iframe height="300" width="600" src="https://www.youtube.com/embed/oNUu0Ecj6PA" allowfullscreen frameborder="0"></iframe>
+            <div class="youtube">
+                <h1><span>My Media</span></h1>
+                <iframe height="300" width="600" src="https://www.youtube.com/embed/bheanxauu2Y" allowfullscreen frameborder="0"></iframe>
+                <h1><span>My Media 2</span></h1>
+                <iframe height="300" width="600" src="https://www.youtube.com/embed/oNUu0Ecj6PA" allowfullscreen frameborder="0"></iframe>
+            </div>            
         </div>
         <!-- Media section end -->
         
@@ -132,7 +188,7 @@
                 <path d="M 30 70 q 20 20 40 0" stroke="#FFFFFF" stroke-width="5" fill="none" />
             </svg>
                  
-            <form>
+            <form action="mailto:soundofthewind1102@gmail.com" method="post" target="framename">
                 <input name="name" placeholder="Name" type="text" required /><br/>
                 <input name="email" placeholder="Email" type="email" required /><br/>
                 <textarea name="message" placeholder="Message" required ></textarea>
@@ -148,7 +204,7 @@
                 <a href="https://www.sololearn.com/Certificate/1014-12869307/jpg" target="_blank">
                     <img alt="SoloLearn" src="https://www.sololearn.com/Uploads/icons/sololearn.png" />
                 </a>
-                <a href="https://www.facebook.com" target="_blank">
+                <a href="https://www.facebook.com/kiemthanh" target="_blank">
                     <img alt="Facebook" src="https://www.sololearn.com/Uploads/icons/facebook.png"/>
                 </a>
                 <a href="#">
@@ -159,11 +215,12 @@
         <!-- Contacts section end -->
         
         <div class="copyright">
-            &copy; 2017 My Blog. All rights reserved.
+            &copy; 12/12/2021 My Blog. All rights reserved.
         </div>
-		
-		
-        
+
+
+		<script src="app.js"></script>	
+
     </body>
 		
 	
